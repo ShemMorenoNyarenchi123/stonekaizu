@@ -1,0 +1,136 @@
+@font-face {
+    font-family: virgil;
+    src: url("fonts/Helvetica Bold/Helvetica Bold.ttf");
+}
+
+/* Reset and base styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: virgil, sans-serif;
+    line-height: 1.5;
+}
+
+/* Main layout */
+body {
+    padding: 1rem;
+    background-color: white;
+}
+
+/* Title styles */
+.title {
+    font-size: clamp(24px, 5vw, 36px);
+    color: black;
+    margin: 1rem 0;
+    padding: 0.5rem;
+    position: absolute;
+    left: 50px;
+}
+
+/* Navigation */
+.tab {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding: 1rem;
+    position: relative;
+    z-index: 10;
+    top: 60px;
+}
+
+/* Navigation buttons */
+.tab button {
+    position: relative;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background: transparent;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.tab button:hover {
+    transform: translateY(-2px);
+}
+
+/* Navigation links */
+.aboutlnk, .storelnk, .contactslnk, .gallerylnk {
+    text-decoration: none;
+    color: black;
+    font-size: clamp(16px, 2vw, 20px);
+}
+
+/* Content area */
+.quote {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 1rem;
+    position: absolute;
+
+}
+
+.quote h1 {
+    font-size: clamp(18px, 3vw, 25px);
+    margin-bottom: 1rem;
+    color: black;
+    font-family: sans-serif, virgil;
+}
+.name {
+    font-size: clamp(20px, 4vw, 30px);
+    margin-bottom: 0.5rem;
+    color: black;
+    font-family: virgil, sans-serif;
+    position: absolute;
+    left: 400px;
+    top: 212px;
+}
+.word{
+    margin-top: 3rem;
+    position: relative;
+    color: black;
+    font-family: virgil, sans-serif;
+    right: -500px;
+    bottom: -150px;
+}
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+    .tab {
+        justify-content: center;
+        margin-top: 1rem;
+    }
+
+    .quote {
+        text-align: center;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 0.5rem;
+    }
+
+    .tab {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .tab button {
+        width: 100%;
+        max-width: 200px;
+    }
+
+    .quote h1 {
+        font-size: clamp(16px, 4vw, 20px);
+    }
+}
+
